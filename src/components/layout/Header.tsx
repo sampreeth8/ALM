@@ -97,10 +97,10 @@ const Header = () => {
                     </Link>
                     <div className="absolute left-full top-0 w-56 bg-white shadow-lg py-2 invisible group-hover/sub:visible">
                       <Link
-                        href="/services/turbo-laser"
+                        href="/services/tube-laser"
                         className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white"
                       >
-                        Turbo Laser
+                        Tube Laser
                       </Link>
                       <Link
                         href="/services/sheet-laser"
@@ -286,13 +286,44 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Other Top Links */}
-            <Link
-              href="/capability"
-              className="text-primary hover:text-secondary font-medium transition-colors duration-200"
-            >
-              Capability
-            </Link>
+            {/* Capability Dropdown */}
+            <div className="relative group">
+              <button className="text-primary hover:text-secondary font-medium transition-colors duration-200 flex items-center">
+                Capability
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="bg-white shadow-lg py-2">
+                  <Link
+                    href="/services/capability-and-Equipment"
+                    className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white"
+                  >
+                    Capabilities & Equipment
+                  </Link>
+                  <Link
+                    href="/capability/accreditation"
+                    className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white"
+                  >
+                    Accreditations and Policy Documents
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <Link
               href="/products"
               className="text-primary hover:text-secondary font-medium transition-colors duration-200"

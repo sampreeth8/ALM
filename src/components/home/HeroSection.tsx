@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <section className="relative">
-      {/* Hero image with dark overlay */}
+      {/* Hero Background Image */}
       <div className="relative h-[60vh] min-h-[400px] w-full">
         <Image
           src="/images/laser-cutting-hero.jpg"
@@ -13,13 +13,44 @@ const HeroSection = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-60">
-          <div className="container-custom h-full flex flex-col justify-center">
-            <div className="max-w-2xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                PRECISION SHEET METAL FABRICATION & MANUFACTURING
-              </h1>
-            </div>
+
+        {/* Overlay FIRST */}
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+
+        {/* Cert Logos in Row */}
+        <div className="absolute top-6 right-6 z-20 flex space-x-4">
+          <div className="relative w-24 h-24">
+            <Image
+              src="/images/c1.jpg"
+              alt="ISO 1"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="relative w-24 h-24">
+            <Image
+              src="/images/c2.jpg"
+              alt="ISO 2"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="relative w-24 h-24">
+            <Image
+              src="/images/c3.jpg"
+              alt="ESA Certified"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Text Content Overlay */}
+        <div className="absolute inset-0 z-20 flex flex-col justify-center container-custom">
+          <div className="max-w-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              PRECISION SHEET METAL FABRICATION & MANUFACTURING
+            </h1>
           </div>
         </div>
       </div>
@@ -44,7 +75,9 @@ const HeroSection = () => {
               className="object-cover"
             />
           </div>
-          <h3 className="text-sm font-medium text-primary">Sheet Laser Cutting</h3>
+          <h3 className="text-sm font-medium text-primary">
+            Sheet Laser Cutting
+          </h3>
         </div>
 
         <div className="flex flex-col items-center">
@@ -56,7 +89,9 @@ const HeroSection = () => {
               className="object-cover"
             />
           </div>
-          <h3 className="text-sm font-medium text-primary">Tube Laser Cutting</h3>
+          <h3 className="text-sm font-medium text-primary">
+            Tube Laser Cutting
+          </h3>
         </div>
 
         <div className="flex flex-col items-center">
@@ -104,7 +139,9 @@ const HeroSection = () => {
               className="object-cover"
             />
           </div>
-          <h3 className="text-sm font-medium text-primary">Forming (Press Brake)</h3>
+          <h3 className="text-sm font-medium text-primary">
+            Forming (Press Brake)
+          </h3>
         </div>
 
         <div className="flex flex-col items-center">
@@ -125,7 +162,8 @@ const HeroSection = () => {
         <div className="container-custom grid md:grid-cols-5 gap-8">
           <div className="md:col-span-2">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              20+ Years Of <br />Engineering Excellence
+              20+ Years Of <br />
+              Engineering Excellence
             </h2>
           </div>
           <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -152,7 +190,9 @@ const HeroSection = () => {
                 <span className="text-white font-bold">D</span>
               </div>
               <div>
-                <p className="text-sm">On-time delivery is assured every time</p>
+                <p className="text-sm">
+                  On-time delivery is assured every time
+                </p>
               </div>
             </div>
           </div>
