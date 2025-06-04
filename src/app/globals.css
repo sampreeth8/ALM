@@ -5,6 +5,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes pulse-custom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s ease-in-out infinite;
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

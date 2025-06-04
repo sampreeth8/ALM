@@ -7,49 +7,71 @@ const HeroSection = () => {
       {/* Hero Background Image */}
       <div className="relative h-[60vh] min-h-[400px] w-full">
         <Image
-          src="/images/laser-cutting-hero.jpg"
+          src="/images/almho.jpg"
           alt="Precision Sheet Metal Fabrication"
           fill
           className="object-cover"
           priority
         />
 
-        {/* Overlay FIRST */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+        {/* Certification Boxes */}
+        {/* Certification Boxes */}
+        <div className="absolute top-6 right-6 z-20 space-y-4">
+          {[
+            {
+              text: "ISO Certified 9001:2015",
+              link: null,
+            },
+            {
+              text: "ISO Certified 9001:2015",
+              link: null,
+            },
+            {
+              text: "Electrical Safety Authorized Certified",
+              link: "https://findacontractor.esasafe.com/Home/ContractorSearch?Name=&LicenceNumber=7018183&City=&TelephoneNumber=&MaxResults=20",
+              pulse: true,
+            },
+          ].map((item, index) => {
+            const content = (
+              <div
+                className={`w-64 rounded-md cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#d82222] to-[#ff4b4b] hover:from-[#103f91] hover:to-[#1a2e92] px-4 py-3 shadow-md`}
+              >
+                <p
+                  className={`text-white font-semibold text-center ${
+                    item.pulse ? "animate-pulse-custom" : ""
+                  }`}
+                >
+                  {item.text}
+                </p>
+              </div>
+            );
 
-        {/* Cert Logos in Row */}
-        <div className="absolute top-6 right-6 z-20 flex space-x-4">
-          <div className="relative w-24 h-24">
-            <Image
-              src="/images/c1.jpg"
-              alt="ISO 1"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="relative w-24 h-24">
-            <Image
-              src="/images/c2.jpg"
-              alt="ISO 2"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="relative w-24 h-24">
-            <Image
-              src="/images/c3.jpg"
-              alt="ESA Certified"
-              fill
-              className="object-contain"
-            />
-          </div>
+            return item.link ? (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {content}
+              </a>
+            ) : (
+              <div key={index}>{content}</div>
+            );
+          })}
         </div>
 
         {/* Text Content Overlay */}
         <div className="absolute inset-0 z-20 flex flex-col justify-center container-custom">
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              PRECISION SHEET METAL FABRICATION & MANUFACTURING
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+              <span className="text-[#1A2E92]">PRECISION</span>{" "}
+              <span className="text-[#FF0000]">SHEET METAL</span>{" "}
+              <span className="text-[#1A2E92]">FABRICATION</span>{" "}
+              <span className="text-[#FF0000]">&</span>{" "}
+              <span className="text-[#1A2E92]">MANUFA</span>
+              <span className="text-[#FF0000]">CTURING</span>
             </h1>
           </div>
         </div>
@@ -66,95 +88,48 @@ const HeroSection = () => {
 
       {/* Quick service links */}
       <div className="container-custom py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 text-center">
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/laser-cutting-closeup.jpg"
-              alt="Sheet Laser Cutting"
-              fill
-              className="object-cover"
-            />
+        {[
+          {
+            src: "/images/laser-cutting-closeup.jpg",
+            label: "Sheet Laser Cutting",
+          },
+          {
+            src: "/images/laser-cutting-hero.jpg",
+            label: "Tube Laser Cutting",
+          },
+          {
+            src: "/images/cnc-machine.jpg",
+            label: "CNC Machining",
+          },
+          {
+            src: "/images/cnc-machine.jpg",
+            label: "CNC Turning",
+          },
+          {
+            src: "/images/cnc-punching.jpg",
+            label: "Punching",
+          },
+          {
+            src: "/images/sheet-metal-bending.jpg",
+            label: "Forming (Press Brake)",
+          },
+          {
+            src: "/images/laser-cutting-closeup.jpg",
+            label: "Finishing",
+          },
+        ].map((item, index) => (
+          <div className="flex flex-col items-center" key={index}>
+            <div className="h-24 w-full relative mb-3 overflow-hidden">
+              <Image
+                src={item.src}
+                alt={item.label}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <h3 className="text-sm font-medium text-primary">{item.label}</h3>
           </div>
-          <h3 className="text-sm font-medium text-primary">
-            Sheet Laser Cutting
-          </h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/laser-cutting-hero.jpg"
-              alt="Tube Laser Cutting"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">
-            Tube Laser Cutting
-          </h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/cnc-machine.jpg"
-              alt="CNC Machining"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">CNC Machining</h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/cnc-machine.jpg"
-              alt="CNC Turning"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">CNC Turning</h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/cnc-punching.jpg"
-              alt="Punching"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">Punching</h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/sheet-metal-bending.jpg"
-              alt="Forming (Press Brake)"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">
-            Forming (Press Brake)
-          </h3>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <div className="h-24 w-full relative mb-3 overflow-hidden">
-            <Image
-              src="/images/laser-cutting-closeup.jpg"
-              alt="Finishing"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <h3 className="text-sm font-medium text-primary">Finishing</h3>
-        </div>
+        ))}
       </div>
 
       {/* Intro section with 20+ years */}
@@ -167,34 +142,29 @@ const HeroSection = () => {
             </h2>
           </div>
           <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex-shrink-0 bg-secondary flex items-center justify-center rounded-full">
-                <span className="text-white font-bold">S</span>
+            {[
+              {
+                icon: "S",
+                text: "Specialists in metal fabrication",
+              },
+              {
+                icon: "Q",
+                text: "Overall component quality",
+              },
+              {
+                icon: "D",
+                text: "On-time delivery is assured every time",
+              },
+            ].map((item, index) => (
+              <div className="flex items-start space-x-4" key={index}>
+                <div className="w-12 h-12 flex-shrink-0 bg-secondary flex items-center justify-center rounded-full">
+                  <span className="text-white font-bold">{item.icon}</span>
+                </div>
+                <div>
+                  <p className="text-sm">{item.text}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm">Specialists in metal fabrication</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex-shrink-0 bg-secondary flex items-center justify-center rounded-full">
-                <span className="text-white font-bold">Q</span>
-              </div>
-              <div>
-                <p className="text-sm">Overall component quality</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 flex-shrink-0 bg-secondary flex items-center justify-center rounded-full">
-                <span className="text-white font-bold">D</span>
-              </div>
-              <div>
-                <p className="text-sm">
-                  On-time delivery is assured every time
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

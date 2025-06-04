@@ -55,7 +55,11 @@ const Header = () => {
             onClick={toggleMenu}
             className="lg:hidden p-2 text-primary hover:text-secondary"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
 
           {/* Desktop Nav */}
@@ -99,7 +103,7 @@ const Header = () => {
                   <div className="relative group/sub">
                     <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white flex justify-between items-center"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white justify-between items-center"
                     >
                       Laser Cutting <span>▶</span>
                     </Link>
@@ -123,7 +127,7 @@ const Header = () => {
                   <div className="relative group/sub">
                     <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white flex justify-between items-center"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white justify-between items-center"
                     >
                       CNC Machining <span>▶</span>
                     </Link>
@@ -147,7 +151,7 @@ const Header = () => {
                   <div className="relative group/sub">
                     <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white flex justify-between items-center"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white justify-between items-center"
                     >
                       Assembly <span>▶</span>
                     </Link>
@@ -197,7 +201,7 @@ const Header = () => {
                   <div className="relative group/sub">
                     <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white flex justify-between items-center"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white justify-between items-center"
                     >
                       Fabrication <span>▶</span>
                     </Link>
@@ -251,7 +255,7 @@ const Header = () => {
                   <div className="relative group/sub">
                     <Link
                       href="#"
-                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white flex justify-between items-center"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-secondary hover:text-white justify-between items-center"
                     >
                       Solar Panel <span>▶</span>
                     </Link>
@@ -402,14 +406,16 @@ const Header = () => {
                 >
                   About Us
                 </Link>
-                
+
                 {/* Mobile Services Accordion */}
                 <div className="space-y-2">
                   <div className="font-medium text-primary py-2">Services</div>
                   <div className="pl-4 space-y-2">
                     {/* Laser Cutting */}
                     <div className="space-y-2">
-                      <div className="font-medium text-primary">Laser Cutting</div>
+                      <div className="font-medium text-primary">
+                        Laser Cutting
+                      </div>
                       <div className="pl-4">
                         <Link
                           href="/services/tube-laser"
@@ -430,7 +436,9 @@ const Header = () => {
 
                     {/* CNC Machining */}
                     <div className="space-y-2">
-                      <div className="font-medium text-primary">CNC Machining</div>
+                      <div className="font-medium text-primary">
+                        CNC Machining
+                      </div>
                       <div className="pl-4">
                         <Link
                           href="/services/cnc-machine"
@@ -502,7 +510,9 @@ const Header = () => {
 
                     {/* Fabrication */}
                     <div className="space-y-2">
-                      <div className="font-medium text-primary">Fabrication</div>
+                      <div className="font-medium text-primary">
+                        Fabrication
+                      </div>
                       <div className="pl-4">
                         <Link
                           href="/services/fabrication/stainless-steel"
@@ -558,7 +568,9 @@ const Header = () => {
 
                     {/* Solar Panel */}
                     <div className="space-y-2">
-                      <div className="font-medium text-primary">Solar Panel</div>
+                      <div className="font-medium text-primary">
+                        Solar Panel
+                      </div>
                       <div className="pl-4">
                         <Link
                           href="/services/solar/commercial"
@@ -603,7 +615,9 @@ const Header = () => {
 
                 {/* Mobile Capability */}
                 <div className="space-y-2">
-                  <div className="font-medium text-primary py-2">Capability</div>
+                  <div className="font-medium text-primary py-2">
+                    Capability
+                  </div>
                   <div className="pl-4 space-y-2">
                     <Link
                       href="/services/capability-and-Equipment"
