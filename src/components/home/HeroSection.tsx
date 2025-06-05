@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Hero Background Image */}
       <div className="relative h-[60vh] min-h-[400px] w-full">
         <Image
-          src="/images/almho.jpg"
+          src="/images/hero3.png" // replace with your image path
           alt="Precision Sheet Metal Fabrication"
           fill
           className="object-cover"
@@ -23,10 +23,6 @@ const HeroSection = () => {
               link: null,
             },
             {
-              text: "ISO Certified 9001:2015",
-              link: null,
-            },
-            {
               text: "Electrical Safety Authorized Certified",
               link: "https://findacontractor.esasafe.com/Home/ContractorSearch?Name=&LicenceNumber=7018183&City=&TelephoneNumber=&MaxResults=20",
               pulse: true,
@@ -34,7 +30,7 @@ const HeroSection = () => {
           ].map((item, index) => {
             const content = (
               <div
-                className={`w-64 rounded-md cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#d82222] to-[#ff4b4b] hover:from-[#103f91] hover:to-[#1a2e92] px-4 py-3 shadow-md`}
+                className={`w-64 rounded-md cursor-pointer transition-all duration-300 bg-gradient-to-r from-[#d82222] to-[#ff4b4b] hover:from-[#103f91] hover:to-white px-4 py-3 shadow-md`}
               >
                 <p
                   className={`text-white font-semibold text-center ${
@@ -66,12 +62,12 @@ const HeroSection = () => {
         <div className="absolute inset-0 z-20 flex flex-col justify-center container-custom">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              <span className="text-[#1A2E92]">PRECISION</span>{" "}
-              <span className="text-[#FF0000]">SHEET METAL</span>{" "}
-              <span className="text-[#1A2E92]">FABRICATION</span>{" "}
-              <span className="text-[#FF0000]">&</span>{" "}
-              <span className="text-[#1A2E92]">MANUFA</span>
-              <span className="text-[#FF0000]">CTURING</span>
+              <span className="text-white">PRECISION</span>{" "}
+              <span className="text-white">SHEET METAL</span>{" "}
+              <span className="text-white">FABRICATION</span>{" "}
+              <span className="text-white">&</span>{" "}
+              <span className="text-white">MANUFA</span>
+              <span className="text-white">CTURING</span>
             </h1>
           </div>
         </div>
